@@ -1,0 +1,59 @@
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (120.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (80.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateProducts (20120525060053)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "sku" integer, "price" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120525060053')
+  [1m[36m (107.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("products")
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-05-25 11:31:26 +0530
+Served asset /rails.png - 200 OK (32ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2012-05-25 11:31:34 +0530
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" [0m
+  Rendered products/index.html.erb within layouts/application (21.8ms)
+Compiled products.css  (58ms)  (pid 4049)
+Compiled scaffolds.css  (14ms)  (pid 4049)
+Compiled application.css  (87ms)  (pid 4049)
+Compiled jquery.js  (3ms)  (pid 4049)
+Compiled jquery_ujs.js  (0ms)  (pid 4049)
+Compiled products.js  (114ms)  (pid 4049)
+Compiled application.js  (199ms)  (pid 4049)
+Completed 200 OK in 802ms (Views: 473.7ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-05-25 11:31:35 +0530
+Served asset /products.css - 200 OK (2ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-05-25 11:31:35 +0530
+Served asset /products.js - 200 OK (10ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-25 11:31:35 +0530
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-25 11:31:35 +0530
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-05-25 11:31:35 +0530
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-25 11:31:35 +0530
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-25 11:31:35 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
